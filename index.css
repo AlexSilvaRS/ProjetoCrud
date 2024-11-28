@@ -1,0 +1,81 @@
+/* Estilização básica */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header .login-btn a {
+    background-color: white;
+    color: #4CAF50;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+header .login-btn a:hover {
+    background-color: #3e8e41;
+    color: white;
+}
+
+/* Área principal */
+main {
+    padding: 20px;
+}
+
+main h1 {
+    color: #4CAF50;
+}
+
+.noticias {
+    margin-top: 20px;
+}
+
+.noticias article {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.noticias .imagem-manchete {
+    max-width: 150px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.noticias .manchete-conteudo h2 {
+    color: #4CAF50;
+    margin: 0;
+}
+
+.noticias .manchete-conteudo p {
+    line-height: 1.6;
+}
+
+/* Rodapé */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}

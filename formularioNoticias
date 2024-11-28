@@ -1,0 +1,42 @@
+<?php
+session_start();
+include_once'./config.php';
+include_once './classes/usuario';
+try {
+    $usuario = new Usuario($db);
+    $usuario = $usuario->listarTodos();
+}catch(Exception $e) {
+    die("Erro:".$e->getMessage());
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Notícias</title>
+</head>
+<body>
+    <div class="container">;
+        <h1>Adicionar Nova Notícias</h1>
+        <form method="POST"action="salvarNoticias.php"
+        enctype="multipart/form_data">
+        <input type="text" name="titulo" required>
+        <select name="autor" required>
+            <option value="">Selecione o autor</option>
+            <?php foreach($usuario as $usuario):?>
+                <option value="<?php echo $usuario['id'];?>">
+                    <?php echo htmlspecialchars($usuario['name']);?></option>
+                    <?php endforeach;?>
+            </select>
+            <input type="date" name="data_publicacao" required>
+            <textArea name="conteudo" rows="5" required>
+                <input type="file" name="imagem" accept=".jpg,.png">
+                <button type="submit">Salvar Notícia</button>
+            </form>
+            </div>
+            </body>
+            </html>
+</body>
+</html>
